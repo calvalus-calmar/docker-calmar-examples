@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<wps:Execute xmlns:wps="http://www.opengis.net/wps/1.0.0"
+             xmlns:ows="http://www.opengis.net/ows/1.1"
+             service="WPS"
+             version="1.0.0">
+    <ows:Identifier>QL</ows:Identifier>
+    <wps:DataInputs>
+        <wps:Input>
+            <ows:Identifier>productionName</ows:Identifier>
+            <wps:Data>
+                <wps:LiteralData>Example 5 - QL GeoTiFF</wps:LiteralData>
+            </wps:Data>
+        </wps:Input>
+        <wps:Input>
+            <ows:Identifier>inputPath</ows:Identifier>
+            <wps:Data>
+                <wps:LiteralData>/calvalus/eodata/MER_RR__1P/r03/${yyyy}/${MM}/${dd}/MER_..._1.*${yyyy}${MM}${dd}.*.N1</wps:LiteralData>
+            </wps:Data>
+        </wps:Input>
+        <wps:Input>
+            <ows:Identifier>calvalus.output.dir</ows:Identifier>
+            <wps:Data>
+                <wps:LiteralData>/calvalus/home/examples/example5_ql_geotiff</wps:LiteralData>
+            </wps:Data>
+        </wps:Input>
+        <wps:Input>
+            <ows:Identifier>calvalus.ql.parameters</ows:Identifier>
+            <wps:Data>
+                <wps:ComplexData>
+                    <parameters>
+                        <quicklooks>
+                            <config>
+                                <RGBAExpressions>
+                                    log(1.0 + 0.35 * radiance_2 + 0.60 * radiance_5 + radiance_6 + 0.13 * radiance_7),
+                                    log(1.0 + 0.21 * radiance_3 + 0.50 * radiance_4 + radiance_5 + 0.38 * radiance_6),
+                                    log(1.0 + 0.21 * radiance_1 + 1.75 * radiance_2 + 0.47 * radiance_3 + 0.16 * radiance_4)
+                                </RGBAExpressions>
+                                <backgroundColor>0,0,0,0</backgroundColor>
+                                <imageType>geotiff</imageType>
+                            </config>
+                        </quicklooks>
+                    </parameters>
+                </wps:ComplexData>
+            </wps:Data>
+        </wps:Input>
+    </wps:DataInputs>
+</wps:Execute>
