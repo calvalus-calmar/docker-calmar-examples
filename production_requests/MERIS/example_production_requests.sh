@@ -1,13 +1,13 @@
 #!/bin/bash
 
-hdfs dfs -rm -r -f /calvalus/home/examples/*
+# Various example productions using MERIS data (Calvalus L2, L2F, L2Plus and QL productions)
 
 # Example 1 - L2 production (SequenceFile output)
 java com.bc.calvalus.production.cli.ProductionTool -e example1_L2_BandMaths_SequenceFile.xml
 hdfs dfs -ls /calvalus/home/examples/example1_l2_bandmaths/
 hdfs dfs -rm -r -f /calvalus/home/examples/example1_l2_bandmaths/
 
-# Example 2 - L2Plus production (netCDF output)
+# Example 2 - L2F production (netCDF output)
 java com.bc.calvalus.production.cli.ProductionTool -e example2_L2F_BandMaths_NetCDF.xml
 hdfs dfs -ls /calvalus/home/examples/example2_l2f_bandmaths/
 hdfs dfs -copyToLocal /calvalus/home/examples/example2_l2f_bandmaths/MER_RR__1PNPDK20030813_175754_000026132019_00027_07596_4557.nc.gz .
